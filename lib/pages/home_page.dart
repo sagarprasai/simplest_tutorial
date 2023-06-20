@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplesttutorial/widget/card_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,49 +15,30 @@ class HomePage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Card(
-                child: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  width: double.infinity,
-                  child: Column(
-                    children: [
-                      Image.asset('images/rocket.png'),
-                      const Text('Welcome',
-                          style: TextStyle(
-                            fontSize: 24.0,
-                          )),
-                      const Text('Diverse Patterns is a consulting company.'),
-                    ],
-                  ),
-                ),
-              ),
+              const CardWidget(
+                  title: 'Rocket',
+                  description: 'I am a rocket',
+                  imagePath: 'rocket'),
               Row(
-                children: [
+                children: const [
                   Expanded(
-                    child: Card(
-                      child: Container(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset('images/space.png'),
-                      ),
-                    ),
+                    child: CardWidget(
+                        title: 'Space',
+                        description: 'I am a space',
+                        imagePath: 'space'),
                   ),
                   Expanded(
-                    child: Card(
-                      child: Container(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset('images/travel.png'),
-                      ),
-                    ),
+                    child: CardWidget(
+                        title: 'Travel',
+                        description: 'Travel is fun',
+                        imagePath: 'travel'),
                   ),
                 ],
               ),
-              Card(
-                child: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  width: double.infinity,
-                  child: Image.asset('images/yeah.png'),
-                ),
-              ),
+              const CardWidget(
+                  title: 'Yeah!',
+                  description: 'Yeah! I did it.',
+                  imagePath: 'yeah'),
             ],
           ),
         ));
