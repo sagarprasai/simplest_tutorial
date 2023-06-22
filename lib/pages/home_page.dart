@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplesttutorial/class/item_class.dart';
 import 'package:simplesttutorial/widget/card_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,30 +16,34 @@ class HomePage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const CardWidget(
-                  title: 'Rocket',
-                  description: 'I am a rocket',
-                  imagePath: 'rocket'),
+              CardWidget(
+                  box: ItemClass(
+                      title: 'Rocket',
+                      description: 'I am a rocket',
+                      imagePath: 'images/rocket.png')),
               Row(
-                children: const [
+                children: [
                   Expanded(
                     child: CardWidget(
-                        title: 'Space',
-                        description: 'I am a space',
-                        imagePath: 'space'),
+                        box: ItemClass(
+                            title: 'Space',
+                            description: 'Space is cool',
+                            imagePath: 'images/space.png')),
                   ),
                   Expanded(
                     child: CardWidget(
-                        title: 'Travel',
-                        description: 'Travel is fun',
-                        imagePath: 'travel'),
+                        box: ItemClass(
+                            title: 'Travel',
+                            description: 'I love travel',
+                            imagePath: 'images/travel.png')),
                   ),
                 ],
               ),
-              const CardWidget(
-                  title: 'Yeah!',
-                  description: 'Yeah! I did it.',
-                  imagePath: 'yeah'),
+              CardWidget(
+                  box: ItemClass(
+                      title: 'Yeah!',
+                      description: 'Yeah! I did it.',
+                      imagePath: 'images/yeah.png')),
             ],
           ),
         ));
